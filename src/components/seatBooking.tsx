@@ -90,8 +90,8 @@ export function SeatBooking() {
   const availableSeats = seats.length - reservedSeats
 
   return (
-    <div className="flex flex-col lg:flex-row gap-16 items-center justify-start">
-      <div className="w-full lg:w-72 space-y-4">
+    <div className="flex flex-col lg:flex-row gap-40">
+      <div className="w-full lg:w-72 space-y-4 min-w-[400px]">
         <div className="space-y-2">
           <h2 className="text-lg font-medium">Book Seats</h2>
           <div className="flex gap-2">
