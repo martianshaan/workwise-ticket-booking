@@ -1,6 +1,6 @@
 import "@/styles/globals.css";
-import { AuthProvider } from './context/AuthContext'
-import { SeatProvider } from './context/SeatContext'
+import { AuthProvider } from '../context/AuthContext'
+import { SeatProvider } from '../context/SeatContext'
 import { AppProps } from 'next/app'
 import { Inter } from 'next/font/google'
 import { ClerkProvider } from "@clerk/nextjs";

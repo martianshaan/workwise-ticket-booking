@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
-import { useSeats } from "@/pages/context/SeatContext"
+import { useSeats } from "@/context/SeatContext"
 import { useUser } from "@clerk/nextjs"
 
 interface Seat {
