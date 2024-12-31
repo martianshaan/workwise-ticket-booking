@@ -26,8 +26,10 @@ export const SeatProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const fetchSeats = async () => {
     try {
       const response = await axios.get('https://workwise-ticket-booking-backend.onrender.com/api/seats')
+      console.log('resoponse of seats:', response.data);
       if (response.data.length === 0) {
         const response = await axios.get('https://workwise-ticket-booking-backend.onrender.com/api/seats/initialize')
+        console.log('resoponse of initilize seats:', response.data);
         setSeats(response.data)
       } else {
         setSeats(response.data)
