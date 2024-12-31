@@ -25,9 +25,9 @@ export const SeatProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   const fetchSeats = async () => {
     try {
-      const response = await axios.get('http://localhost:3001/api/seats')
+      const response = await axios.get('https://workwise-ticket-booking-backend.onrender.com/api/seats')
       if (response.data.length === 0) {
-        const response = await axios.get('http://localhost:3001/api/seats/initialize')
+        const response = await axios.get('https://workwise-ticket-booking-backend.onrender.com/api/seats/initialize')
         setSeats(response.data)
       } else {
         setSeats(response.data)
@@ -44,7 +44,7 @@ export const SeatProvider: React.FC<{ children: React.ReactNode }> = ({ children
     console.log('seatIds:', seatIds);
     console.log('username:', username);
     try {
-      const response = await axios.post('http://localhost:3001/api/seats/reserve', {
+      const response = await axios.post('https://workwise-ticket-booking-backend.onrender.com/api/seats/reserve', {
         seatIds,
         username
       })
@@ -57,7 +57,7 @@ export const SeatProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   const cancelReservation = async (seatIds: number[]) => {
     try {
-      const response = await axios.post('http://localhost:3001/api/seats/cancel', {
+      const response = await axios.post('https://workwise-ticket-booking-backend.onrender.com/api/seats/cancel', {
         seatIds
       })
       setSeats(response.data)

@@ -11,33 +11,12 @@ export default function Home() {
   const foundEmail=user?.emailAddresses[0].emailAddress;
   console.log('foundfirstName:', foundfirstName);
   console.log('foundEmail:', foundEmail);
-  // useEffect(() => {
-  //   const syncUserWithBackend = async () => {
-  //     if (user) {
-  //       try {
-  //         await fetch('http://localhost:3001/api/profile', {
-  //           method: 'POST',
-  //           headers: {
-  //             'Content-Type': 'application/json',
-  //           },
-  //           body: JSON.stringify({
-  //             username: user.firstName,
-  //             email: user.emailAddresses[0].emailAddress,
-  //           }),
-  //         });
-  //       } catch (error) {
-  //         console.error('Error syncing user:', error);
-  //       }
-  //     }
-  //   };
 
-  //   syncUserWithBackend();
-  // }, [user]);
   useEffect(() => {
     const syncUserWithBackend = async () => {
       if (user) {
         try {
-          await axios.post('http://localhost:3001/api/profile', {
+          await axios.post('https://workwise-ticket-booking-backend.onrender.com/api/profile', {
             username:foundfirstName,
             email: foundEmail,
           });
